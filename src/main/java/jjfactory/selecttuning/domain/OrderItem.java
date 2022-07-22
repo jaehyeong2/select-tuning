@@ -1,29 +1,28 @@
 package jjfactory.selecttuning.domain;
 
+import antlr.preprocessor.PreprocessorTokenTypes;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Getter
+
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "orders")
-public class Order {
-
+@Getter
+public class OrderItem {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
     private Long id;
 
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "order_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Member member;
+    private Order order;
 
-    @JoinColumn(name = "delivery_id")
-    @OneToOne(fetch = FetchType.LAZY)
-    private Delivery delivery;
+    @JoinColumn(name = "item_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Item item;
 
-    @Enumerated(EnumType.STRING)
-    private OrderStatus orderStatus;
+    private int price;
+    private int count;
 }
