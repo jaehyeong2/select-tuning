@@ -1,5 +1,6 @@
-package jjfactory.selecttuning.domain;
+package jjfactory.selecttuning.domain.orders;
 
+import jjfactory.selecttuning.domain.Member;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,9 +21,9 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
-    @JoinColumn(name = "delivery_id")
-    @OneToOne(fetch = FetchType.LAZY)
-    private Delivery delivery;
+//    @JoinColumn(name = "delivery_id")
+//    @OneToOne(fetch = FetchType.LAZY)
+//    private Delivery delivery;
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;

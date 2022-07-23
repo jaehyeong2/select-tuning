@@ -1,5 +1,6 @@
 package jjfactory.selecttuning.domain;
 
+import jjfactory.selecttuning.domain.orders.Order;
 import jjfactory.selecttuning.dtio.MemberDto;
 import lombok.AccessLevel;
 import lombok.Builder;

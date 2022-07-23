@@ -1,6 +1,5 @@
-package jjfactory.selecttuning.domain;
+package jjfactory.selecttuning.domain.orders;
 
-import antlr.preprocessor.PreprocessorTokenTypes;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

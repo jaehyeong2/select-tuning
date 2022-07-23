@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.domain;
+package jjfactory.selecttuning.domain.orders;
 
 import lombok.AccessLevel;
 import lombok.Getter;
