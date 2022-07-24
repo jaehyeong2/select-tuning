@@ -13,22 +13,22 @@ import java.util.stream.Collectors;
 @Getter
 public class CommentRes {
     private Long commentId;
+    private Long parentId;
     private String content;
     private LocalDateTime createDate;
-    private List<CommentRes> childComments;
 
-    @Builder
-    public CommentRes(Long commentId, String content, LocalDateTime createDate, List<CommentRes> childComments) {
+    public CommentRes(Long commentId, Long parentId, String content, LocalDateTime createDate) {
         this.commentId = commentId;
+        this.parentId = parentId;
         this.content = content;
         this.createDate = createDate;
-        this.childComments = childComments;
     }
+
     @Builder
     public CommentRes(Comment comment) {
+//        this.parentId = comment.getParent().getId();
         this.commentId = comment.getId();
         this.content = comment.getContent();
         this.createDate = comment.getCreateDate();
-        this.childComments = comment.getChild().stream().map(CommentRes::new).collect(Collectors.toList());
     }
 }

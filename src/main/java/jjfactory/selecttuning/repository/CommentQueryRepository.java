@@ -2,6 +2,7 @@ package jjfactory.selecttuning.repository;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jjfactory.selecttuning.domain.post.Comment;
 import jjfactory.selecttuning.domain.post.QComment;
 import jjfactory.selecttuning.dto.CommentRes;
 import lombok.RequiredArgsConstructor;
@@ -19,16 +20,15 @@ import static jjfactory.selecttuning.domain.post.QComment.*;
 public class CommentQueryRepository {
     private final JPAQueryFactory queryFactory;
 
-    public Page<CommentRes> findComments(Pageable pageable,Long postId){
-        List<CommentRes> comments = queryFactory.select(Projections.constructor(CommentRes.class, comment))
-                .from(comment)
+    public Page<Comment> findComments(Pageable pageable,Long postId){
+        List<Comment> comments = queryFactory.selectFrom(comment)
+                .leftJoin(comment.parent)
                 .where(comment.post.id.eq(postId))
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
                 .fetch();
 
-        int total = queryFactory.select(Projections.constructor(CommentRes.class, comment))
-                .from(comment)
+        int total = queryFactory.selectFrom(comment)
                 .where(comment.post.id.eq(postId)).fetch().size();
 
         return new PageImpl<>(comments,pageable,total);

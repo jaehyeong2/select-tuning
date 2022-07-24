@@ -1,6 +1,7 @@
 package jjfactory.selecttuning.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,7 +14,7 @@ public class QueryDslConfig {
     private EntityManager em;
 
     @Bean
-    private JPAQueryFactory queryFactory(){
+    public JPAQueryFactory queryFactory(){
         return new JPAQueryFactory(em);
     }
 
