@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.dtio;
+package jjfactory.selecttuning.dto;
 
 import jjfactory.selecttuning.domain.Member;
 import lombok.Getter;

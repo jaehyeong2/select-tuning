@@ -3,11 +3,10 @@ package jjfactory.selecttuning.service;
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.post.Comment;
 import jjfactory.selecttuning.domain.post.Post;
-import jjfactory.selecttuning.dtio.CommentCreate;
+import jjfactory.selecttuning.dto.CommentCreate;
 import jjfactory.selecttuning.repository.CommentRepository;
 import jjfactory.selecttuning.repository.MemberJpaRepository;
 import jjfactory.selecttuning.repository.PostRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +16,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 @Transactional
 @SpringBootTest

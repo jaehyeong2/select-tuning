@@ -2,7 +2,7 @@ package jjfactory.selecttuning.service;
 
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.post.Post;
-import jjfactory.selecttuning.dtio.PostCreate;
+import jjfactory.selecttuning.dto.PostCreate;
 import jjfactory.selecttuning.repository.MemberJpaRepository;
 import jjfactory.selecttuning.repository.PostRepository;
 import org.junit.jupiter.api.DisplayName;

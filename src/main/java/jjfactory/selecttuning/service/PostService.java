@@ -3,7 +3,7 @@ package jjfactory.selecttuning.service;
 
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.post.Post;
-import jjfactory.selecttuning.dtio.PostCreate;
+import jjfactory.selecttuning.dto.PostCreate;
 import jjfactory.selecttuning.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

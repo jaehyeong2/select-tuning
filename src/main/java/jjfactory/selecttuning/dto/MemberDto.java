@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.dtio;
+package jjfactory.selecttuning.dto;
 
 
 import lombok.Builder;

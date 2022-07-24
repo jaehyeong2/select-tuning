@@ -4,7 +4,7 @@ package jjfactory.selecttuning.domain.post;
 import jjfactory.selecttuning.domain.BaseTimeEntity;
 import jjfactory.selecttuning.domain.DeleteStatus;
 import jjfactory.selecttuning.domain.Member;
-import jjfactory.selecttuning.dtio.CommentCreate;
+import jjfactory.selecttuning.dto.CommentCreate;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -61,7 +61,12 @@ public class Comment extends BaseTimeEntity {
                 .build();
     }
 
-    public void addChile(Comment comment){
+    public void addParent(Comment comment){
+        this.parent = comment;
+        parent.addChild(comment);
+    }
+
+    public void addChild(Comment comment){
         this.child.add(comment);
     }
 }
