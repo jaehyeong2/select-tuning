@@ -1,9 +1,9 @@
-package jjfactory.selecttuning.service;
+package jjfactory.selecttuning.service.post;
 
 
 import jjfactory.selecttuning.dto.MemberDto;
 import jjfactory.selecttuning.dto.MemberRes;
-import jjfactory.selecttuning.repository.MemberRepository;
+import jjfactory.selecttuning.repository.post.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

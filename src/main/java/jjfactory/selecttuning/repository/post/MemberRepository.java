@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.repository;
+package jjfactory.selecttuning.repository.post;
 
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.dto.MemberDto;

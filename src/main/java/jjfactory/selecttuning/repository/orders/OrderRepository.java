@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.repository;
+package jjfactory.selecttuning.repository.orders;
 
 import jjfactory.selecttuning.domain.orders.Order;
 import org.springframework.data.jpa.repository.JpaRepository;

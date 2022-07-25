@@ -1,12 +1,12 @@
-package jjfactory.selecttuning.service;
+package jjfactory.selecttuning.service.post;
 
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.post.Comment;
 import jjfactory.selecttuning.domain.post.Post;
 import jjfactory.selecttuning.dto.CommentCreate;
 import jjfactory.selecttuning.dto.CommentRes;
-import jjfactory.selecttuning.repository.CommentQueryRepository;
-import jjfactory.selecttuning.repository.CommentRepository;
+import jjfactory.selecttuning.repository.post.CommentQueryRepository;
+import jjfactory.selecttuning.repository.post.CommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Transactional

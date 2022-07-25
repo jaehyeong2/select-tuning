@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.repository;
+package jjfactory.selecttuning.repository.post;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
