@@ -1,6 +1,8 @@
 package jjfactory.selecttuning.domain.orders;
 
+import jjfactory.selecttuning.dto.OrderItemCreate;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,8 +24,26 @@ public class OrderItem {
     @ManyToOne(fetch = FetchType.LAZY)
     private Item item;
 
-    private int price;
+    private int price; // 할인, 쿠폰등이 잇을 수 잇으므로 item의 필드와 따로가져가는게 맞음
     private int count;
+
+    @Builder
+    public OrderItem(int price, int count,Item item) {
+        this.price = price;
+        this.count = count;
+        this.item = item;
+    }
+
+    public static OrderItem create(OrderItemCreate dto, Item item){
+        OrderItem orderItem = OrderItem.builder()
+                .price(dto.getPrice())
+                .count(dto.getCount())
+                .item(item)
+                .build();
+
+        item.removeStock(dto.getCount());
+        return orderItem;
+    }
 
     public void updateOrder(Order order) {
         this.order = order;

@@ -16,9 +16,9 @@ public class MemberRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public MemberRes find(Long id){
+    public Member find(Long id){
         Member member = em.find(Member.class, id);
-        return new MemberRes(member);
+        return member;
     }
 
     public List<MemberRes> findAll(){
