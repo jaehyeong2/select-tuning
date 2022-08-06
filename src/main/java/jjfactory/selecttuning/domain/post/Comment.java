@@ -57,7 +57,7 @@ public class Comment extends BaseTimeEntity {
                 .member(member)
                 .post(post)
                 .content(dto.getContent())
-                .deleteStatus(DeleteStatus.NON_DELETED)
+                .deleteStatus(DeleteStatus.N)
                 .build();
     }
 

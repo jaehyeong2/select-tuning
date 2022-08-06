@@ -51,7 +51,7 @@ public class Post extends BaseTimeEntity {
                 .content(dto.getContent())
                 .viewCount(0)
                 .likeCount(0)
-                .deleteStatus(DeleteStatus.NON_DELETED)
+                .deleteStatus(DeleteStatus.N)
                 .build();
     }
 }

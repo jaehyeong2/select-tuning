@@ -1,7 +1,7 @@
-package jjfactory.selecttuning.repository.team;
+package jjfactory.selecttuning.repository.nba;
 
-import jjfactory.selecttuning.domain.team.Person;
-import jjfactory.selecttuning.domain.team.Team;
+import jjfactory.selecttuning.domain.nba.Player;
+import jjfactory.selecttuning.domain.nba.Team;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 
 @Transactional
@@ -21,7 +19,7 @@ class TeamRepositoryTest {
     TeamRepository teamRepository;
 
     @Autowired
-    PersonRepository personRepository;
+    PlayerRepository playerRepository;
 
     @Test
     void findAll(){
@@ -31,13 +29,13 @@ class TeamRepositoryTest {
         Team teamD = Team.builder().name("TeamD").build();
         teamRepository.saveAll(List.of(teamA,teamB,teamC,teamD));
 
-        List<Person> personList = new ArrayList<>();
+        List<Player> playerList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            Person p = Person.builder().name("person" + i).team(teamA).build();
-            personList.add(p);
+            Player p = Player.builder().name("person" + i).team(teamA).build();
+            playerList.add(p);
         }
 
-        personRepository.saveAll(personList);
+        playerRepository.saveAll(playerList);
 
         teamRepository.findAll();
     }

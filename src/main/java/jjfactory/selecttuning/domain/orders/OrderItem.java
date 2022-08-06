@@ -24,4 +24,16 @@ public class OrderItem {
 
     private int price;
     private int count;
+
+    public void updateOrder(Order order) {
+        this.order = order;
+    }
+
+    public void cancel() {
+        getItem().addStock(count); // 재고수량 원상복구
+    }
+
+    public int getTotalPrice() {
+        return getPrice() * getCount();
+    }
 }

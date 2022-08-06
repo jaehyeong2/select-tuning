@@ -23,20 +23,23 @@ public class Member {
 
     private String name;
     private int age;
+    private String location;
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
     @Builder
-    public Member(String name, int age) {
+    public Member(String name, int age, String location) {
         this.name = name;
         this.age = age;
+        this.location = location;
     }
 
     public static Member create(MemberDto dto){
         return Member.builder()
                 .age(dto.getAge())
                 .name(dto.getName())
+                .location(dto.getLocation())
                 .build();
     }
 }

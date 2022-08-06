@@ -17,5 +17,12 @@ public class Delivery extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne(mappedBy = "delivery")
+    private Order order;
+
     private DeliveryStatus status;
+
+    public void updateOrder(Order order) {
+        this.order = order;
+    }
 }
