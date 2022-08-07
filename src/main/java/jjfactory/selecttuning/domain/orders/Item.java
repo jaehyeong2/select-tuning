@@ -1,7 +1,7 @@
 package jjfactory.selecttuning.domain.orders;
 
 import jjfactory.selecttuning.domain.BaseTimeEntity;
-import jjfactory.selecttuning.dto.ItemCreate;
+import jjfactory.selecttuning.dto.req.ItemCreate;
 import jjfactory.selecttuning.exception.NoEnoughStockException;
 import lombok.AccessLevel;
 import lombok.Builder;

@@ -1,8 +1,8 @@
 package jjfactory.selecttuning.repository.post;
 
 import jjfactory.selecttuning.domain.Member;
-import jjfactory.selecttuning.dto.MemberDto;
-import jjfactory.selecttuning.dto.MemberRes;
+import jjfactory.selecttuning.dto.req.MemberDto;
+import jjfactory.selecttuning.dto.res.MemberRes;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

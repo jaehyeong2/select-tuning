@@ -4,7 +4,7 @@ package jjfactory.selecttuning.domain.post;
 import jjfactory.selecttuning.domain.BaseTimeEntity;
 import jjfactory.selecttuning.domain.DeleteStatus;
 import jjfactory.selecttuning.domain.Member;
-import jjfactory.selecttuning.dto.CommentCreate;
+import jjfactory.selecttuning.dto.req.CommentCreate;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

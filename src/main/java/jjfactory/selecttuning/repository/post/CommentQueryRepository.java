@@ -1,10 +1,7 @@
 package jjfactory.selecttuning.repository.post;
 
-import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jjfactory.selecttuning.domain.post.Comment;
-import jjfactory.selecttuning.domain.post.QComment;
-import jjfactory.selecttuning.dto.CommentRes;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

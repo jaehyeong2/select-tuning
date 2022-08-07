@@ -1,6 +1,6 @@
 package jjfactory.selecttuning.controller;
 
-import jjfactory.selecttuning.dto.CommentRes;
+import jjfactory.selecttuning.dto.res.CommentRes;
 import jjfactory.selecttuning.service.post.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

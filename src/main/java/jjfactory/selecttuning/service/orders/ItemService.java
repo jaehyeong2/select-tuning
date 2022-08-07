@@ -1,7 +1,7 @@
 package jjfactory.selecttuning.service.orders;
 
 import jjfactory.selecttuning.domain.orders.Item;
-import jjfactory.selecttuning.dto.ItemCreate;
+import jjfactory.selecttuning.dto.req.ItemCreate;
 import jjfactory.selecttuning.dto.res.ItemRes;
 import jjfactory.selecttuning.repository.orders.ItemRepository;
 import lombok.RequiredArgsConstructor;

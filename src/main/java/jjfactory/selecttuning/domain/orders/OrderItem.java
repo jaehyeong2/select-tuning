@@ -1,6 +1,6 @@
 package jjfactory.selecttuning.domain.orders;
 
-import jjfactory.selecttuning.dto.OrderItemCreate;
+import jjfactory.selecttuning.dto.req.OrderItemCreate;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

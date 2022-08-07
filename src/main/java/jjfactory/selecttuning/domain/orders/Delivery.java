@@ -41,4 +41,8 @@ public class Delivery extends BaseTimeEntity {
     public void updateOrder(Order order) {
         this.order = order;
     }
+
+    public void compDelivery() {
+        this.status = DeliveryStatus.COMP;
+    }
 }

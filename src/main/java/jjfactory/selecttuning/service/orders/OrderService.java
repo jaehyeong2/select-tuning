@@ -2,9 +2,12 @@ package jjfactory.selecttuning.service.orders;
 
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.orders.*;
-import jjfactory.selecttuning.dto.OrderCreate;
-import jjfactory.selecttuning.dto.OrderItemCreate;
+import jjfactory.selecttuning.dto.req.OrderCreate;
+import jjfactory.selecttuning.dto.req.OrderItemCreate;
+import jjfactory.selecttuning.dto.req.OrderSearch;
+import jjfactory.selecttuning.dto.res.OrderRes;
 import jjfactory.selecttuning.repository.orders.ItemRepository;
+import jjfactory.selecttuning.repository.orders.OrderQueryRepository;
 import jjfactory.selecttuning.repository.orders.OrderRepository;
 import jjfactory.selecttuning.repository.post.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +24,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
+    private final OrderQueryRepository orderQueryRepository;
 
     public Long order(OrderCreate dto){
         Member member = memberRepository.find(dto.getMemberId());
@@ -39,6 +43,8 @@ public class OrderService {
         order.orderCancel();
     }
 
-//    public List
+    public List<OrderRes> findOrders(OrderSearch orderSearch){
+        return orderQueryRepository.findOrders(orderSearch);
+    }
 
 }

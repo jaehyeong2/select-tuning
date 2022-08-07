@@ -3,7 +3,7 @@ package jjfactory.selecttuning.domain.post;
 import jjfactory.selecttuning.domain.BaseTimeEntity;
 import jjfactory.selecttuning.domain.DeleteStatus;
 import jjfactory.selecttuning.domain.Member;
-import jjfactory.selecttuning.dto.PostCreate;
+import jjfactory.selecttuning.dto.req.PostCreate;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

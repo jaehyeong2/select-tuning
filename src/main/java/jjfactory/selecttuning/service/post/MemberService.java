@@ -1,8 +1,8 @@
 package jjfactory.selecttuning.service.post;
 
 
-import jjfactory.selecttuning.dto.MemberDto;
-import jjfactory.selecttuning.dto.MemberRes;
+import jjfactory.selecttuning.dto.req.MemberDto;
+import jjfactory.selecttuning.dto.res.MemberRes;
 import jjfactory.selecttuning.repository.post.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

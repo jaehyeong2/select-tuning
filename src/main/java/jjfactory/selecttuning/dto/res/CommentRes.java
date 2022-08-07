@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.dto;
+package jjfactory.selecttuning.dto.res;
 
 import jjfactory.selecttuning.domain.post.Comment;
 import lombok.Builder;

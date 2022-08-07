@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.dto;
+package jjfactory.selecttuning.dto.req;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

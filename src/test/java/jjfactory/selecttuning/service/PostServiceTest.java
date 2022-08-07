@@ -2,7 +2,7 @@ package jjfactory.selecttuning.service;
 
 import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.post.Post;
-import jjfactory.selecttuning.dto.PostCreate;
+import jjfactory.selecttuning.dto.req.PostCreate;
 import jjfactory.selecttuning.repository.post.MemberJpaRepository;
 import jjfactory.selecttuning.repository.post.PostRepository;
 import jjfactory.selecttuning.service.post.PostService;

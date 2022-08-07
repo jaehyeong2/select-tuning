@@ -1,4 +1,4 @@
-package jjfactory.selecttuning.dto;
+package jjfactory.selecttuning.dto.req;
 
 import jjfactory.selecttuning.domain.orders.Item;
 import lombok.Builder;

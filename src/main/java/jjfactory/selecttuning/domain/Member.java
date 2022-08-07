@@ -1,7 +1,7 @@
 package jjfactory.selecttuning.domain;
 
 import jjfactory.selecttuning.domain.orders.Order;
-import jjfactory.selecttuning.dto.MemberDto;
+import jjfactory.selecttuning.dto.req.MemberDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
