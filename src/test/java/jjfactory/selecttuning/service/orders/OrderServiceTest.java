@@ -50,9 +50,36 @@ class OrderServiceTest {
 
         //when
         List<OrderRes> noParams = orderService.findOrders(new OrderSearch());
+        List<OrderRes> orderOfKim = orderService.findOrders(OrderSearch.builder().memberName("kim").build());
+        List<OrderRes> canceledOrder = orderService.findOrders(OrderSearch.builder().orderStatus(OrderStatus.CANCEL).build());
 
         //then
+        assertThat(noParams.size()).isEqualTo(2);
+        assertThat(orderOfKim.size()).isEqualTo(1);
+        assertThat(canceledOrder).isEmpty();
+    }
 
+    @Test
+    @DisplayName("주문 조회2")
+    void findOrders2(){
+        //given
+        Member lee = createMember("lee");
+        Member kim = createMember("kim");
+        Item book = createItem(10, "book");
+        Item cookie = createItem(5, "cookie");
+        int orderCount = 2;
+
+        OrderCreate order1 = OrderCreate.builder().count(orderCount).itemId(book.getId()).memberId(lee.getId()).build();
+        OrderCreate order2 = OrderCreate.builder().count(orderCount).itemId(cookie.getId()).memberId(kim.getId()).build();
+
+        orderService.order(order1);
+        orderService.order(order2);
+
+        //when
+        List<OrderRes> orderOfKim = orderService.findOrders2(OrderSearch.builder().memberName("kim").build());
+
+        //then
+        assertThat(orderOfKim.size()).isEqualTo(1);
     }
 
     @Test

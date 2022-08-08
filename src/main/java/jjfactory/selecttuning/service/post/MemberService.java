@@ -1,7 +1,7 @@
 package jjfactory.selecttuning.service.post;
 
 
-import jjfactory.selecttuning.dto.req.MemberDto;
+import jjfactory.selecttuning.dto.req.MemberCreate;
 import jjfactory.selecttuning.dto.res.MemberRes;
 import jjfactory.selecttuning.repository.post.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ import java.util.List;
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    public Long join(MemberDto dto){
+    public Long join(MemberCreate dto){
         memberRepository.save(dto);
         return dto.getMemberId();
     }

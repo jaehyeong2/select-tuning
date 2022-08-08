@@ -47,4 +47,8 @@ public class OrderService {
         return orderQueryRepository.findOrders(orderSearch);
     }
 
+    public List<OrderRes> findOrders2(OrderSearch orderSearch){
+        return orderQueryRepository.findOrders2(orderSearch);
+    }
+
 }

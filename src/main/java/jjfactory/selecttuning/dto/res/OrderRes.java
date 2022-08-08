@@ -1,5 +1,6 @@
 package jjfactory.selecttuning.dto.res;
 
+import jjfactory.selecttuning.domain.Member;
 import jjfactory.selecttuning.domain.orders.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,14 @@ public class OrderRes {
     }
 
     public OrderRes(Order order) {
+        this.totalPrice = order.getTotalPrice();
+        this.orderDate = order.getOrderDate();
+        this.orderId = order.getId();
+        this.memberId = order.getMember().getId();
+        this.memberName = order.getMember().getName();
+    }
+
+    public OrderRes(Order order, Member member) {
         this.totalPrice = order.getTotalPrice();
         this.orderDate = order.getOrderDate();
         this.orderId = order.getId();

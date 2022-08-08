@@ -3,6 +3,7 @@ package jjfactory.selecttuning.repository.orders;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jjfactory.selecttuning.domain.QMember;
 import jjfactory.selecttuning.domain.orders.OrderStatus;
 import jjfactory.selecttuning.domain.orders.QOrder;
 import jjfactory.selecttuning.dto.req.OrderSearch;
@@ -13,6 +14,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 
+import static jjfactory.selecttuning.domain.QMember.*;
 import static jjfactory.selecttuning.domain.orders.QOrder.*;
 
 @RequiredArgsConstructor
@@ -23,22 +25,30 @@ public class OrderQueryRepository {
     public List<OrderRes> findOrders(OrderSearch orderSearch){
         return queryFactory.select(Projections.constructor(OrderRes.class, order))
                 .from(order)
-                .where(eqOrderStatus(orderSearch.getOrderStatus()),
-                        eqMemberName(orderSearch.getMemberName()))
+                .where(eqMemberName(orderSearch.getMemberName()),
+                        eqOrderStatus(orderSearch.getOrderStatus()))
+                .fetch();
+    }
+
+    public List<OrderRes> findOrders2(OrderSearch orderSearch){
+        return queryFactory.select(Projections.constructor(OrderRes.class, order, member))
+                .from(order)
+                .innerJoin(member)
+                .on(order.member.id.eq(member.id)).fetchJoin()
+                .where(eqMemberName(orderSearch.getMemberName()),
+                        eqOrderStatus(orderSearch.getOrderStatus()))
                 .fetch();
     }
 
     private BooleanExpression eqOrderStatus(OrderStatus orderStatus){
-        if(StringUtils.hasText(String.valueOf(orderStatus))){
-            return order.orderStatus.eq(orderStatus);
-        }
-        else return null;
+        if(orderStatus == null) return null;
+        return order.orderStatus.eq(orderStatus);
     }
 
     private BooleanExpression eqMemberName(String memberName){
-        if(StringUtils.hasText(memberName)){
-            return order.member.name.eq(memberName);
+        if(!StringUtils.hasText(memberName)){
+            return null;
         }
-        else return null;
+        return order.member.name.eq(memberName);
     }
 }
